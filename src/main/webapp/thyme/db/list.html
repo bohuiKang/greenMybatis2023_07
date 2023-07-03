@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>list</title>
+</head>
+<body>
+<h1>list</h1>
+<table border="">
+	<tr>
+		<td>번호</td>
+		<td>제목</td>
+		<td>작성자</td>
+		<td>등록일</td>
+		<td>조회수</td>
+	</tr>
+	<tr th:each="dto, dtoStat: ${mainData}"> <!-- dto:실제내용, dtoStat:상태 -->
+		<td th:text="${dtoStat.index}"/>
+		<td><a th:href="@{|detail/${dto.id}|}" th:text="${dto.title}" ></a></td>
+		<td th:text="${dto.pname}"/>
+		<td th:text="${dto.reg_date}"/>
+		<td th:text="${dto.cnt}"/>
+	</tr>
+	<tr>
+		<td colspan="5" align="right">
+			<a th:href="@{insert}" th:text="글쓰기" ></a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

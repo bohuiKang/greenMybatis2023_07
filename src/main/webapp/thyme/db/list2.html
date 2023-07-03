@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>list2</title>
+</head>
+<body>
+<h1>list2</h1>
+
+<table border="">
+	<form action="" th:object="${boardDTO}">
+		<tr>
+			<td colspan="5" align="center">
+				제목
+				<input type="text" th:field="*{sch}"/> <!-- sch 를 BoardDTO.java 매개변수로 추가 -->
+				조횟수
+				<select th:field="*{cnt}">
+					<option th:each="no : ${#numbers.sequence(0,10,2)}" th:value="${no}" th:text="${no}"></option>
+				</select>
+				<input type="submit" value="검색" />
+			</td>
+		</tr>
+	</form>
+	<!-- choose를 사용하기 위해 만든 tr코드 -->
+	<tr>
+		<td colspan="5">
+			<a href="/db/listPname/1">1</a>
+			<a href="/db/listPname/2">2</a>
+			<a href="/db/listPname/3">3</a>
+			<a href="/db/listPname/4">4</a>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>번호</td>
+		<td>제목</td>
+		<td>작성자</td>
+		<td>등록일</td>
+		<td>조회수</td>
+	</tr>
+	<tr th:each="dto, dtoStat: ${mainData2}"> <!-- dto:실제내용, dtoStat:상태 -->
+		<td th:text="${dtoStat.index}"/>
+		<td><a th:href="@{|detail2/${dto.id}|}" th:text="${dto.title}" ></a></td>
+		<td th:text="${dto.pname}"/>
+		<td th:text="${dto.reg_date}"/>
+		<td th:text="${dto.cnt}"/>
+	</tr>
+	<tr>
+		<td colspan="5" align="right">
+			<a th:href="@{insert2}" th:text="글쓰기" ></a>
+			<a th:href="@{insertList}" th:text="다중글쓰기"></a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

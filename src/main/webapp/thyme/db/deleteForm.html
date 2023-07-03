@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>deletePw</title>
+</head>
+<body>
+<h1>deletePw확인</h1>
+<form method="post" th:object="${boardDTO}">
+	<table border="">
+		<tr>
+			<td>비밀번ho확인</td>
+			<td><input type="text" th:field="*{pw}" /></td>
+			<!-- th:field="*{pw}" 대신 name="pw"를 사용하면 
+			form 태그의 th:object="${boardDTO}"가 없어도 된다 -->
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="삭제" />
+				<a th:href="|/db/detail/${boardDTO.id}|" th:text="뒤로" ></a>
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

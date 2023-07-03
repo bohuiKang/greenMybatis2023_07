@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>bhStudentExam</title>
+</head>
+<body>
+<h1>bhStudentExam 문제</h1>
+studs[0]: [[${studs[0]}]] <br/> 
+<th:block th:with="res=${studs[0].avg}">
+<!-- $은 한번만 사용하기 (아래 코드 에러)-->
+등급: [[ ${res >= 90 ? '수' : res >= 80 ? '우' : res >= 70 ? '미' : res >= 60 ? '양' :'가' }]] <br/> 
+</th:block>
+
+studs[1]: [[${studs[1]}]] <br/> 
+<th:block th:with="res=${studs[1].avg}">
+등급: [[ ${res >= 90 ? '수' : res >= 80 ? '우' : res >= 70 ? '미' : res >= 60 ? '양' :'가' }]] <br/> 
+</th:block>
+
+studs[2]: [[${studs[2]}]] <br/> 
+<th:block th:with="res=${studs[2].avg}">
+등급: [[ ${res >= 90 ? '수' : res >= 80 ? '우' : res >= 70 ? '미' : res >= 60 ? '양' :'가' }]] <br/> 
+</th:block>
+
+studs[3]: [[${studs[3]}]] <br/> 
+<th:block th:with="res=${studs[3].avg}">
+등급: [[ ${res >= 90 ? '수' : res >= 80 ? '우' : res >= 70 ? '미' : res >= 60 ? '양' :'가' }]] <br/> 
+</th:block>
+
+</body>
+</html>

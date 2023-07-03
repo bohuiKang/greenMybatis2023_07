@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>link</title>
+</head>
+<body>
+<h1>link</h1>
+<a href="aaa">aaa</a> <br/>
+<a th:href="@{/bbb}">/bbb</a> <br/> <!-- 절대경로 -->
+<a th:href="@{ccc}">ccc</a> <br/>
+<a th:href="@{|/${cate1}/${cate2}|}">|/${cate1}/${cate2}|</a> <br/> <!-- http://localhost/qwer/list -->
+<a th:href="@{ddd(prod=${pp1},page=${pp2})}">ddd(prod=${pp1},page=${pp2})</a> <br/>
+<a th:href="@{|/${cate1}/${cate2}|(prod=${pp1},page=${pp2})}">|/${cate1}/${cate2}|(prod=${pp1},page=${pp2})</a> <br/>
+
+</body>
+</html>

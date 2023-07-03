@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko"> <!-- 존재하는 주소인지 확인 필수 -->
+<head>
+<meta charset="UTF-8">
+<title>mybatisProj</title>
+</head>
+<body>
+<h1>mybatisProj</h1>
+<!-- thymeleaf를 사용하여 request.getAttribute가 생략됨. 
+@Data를 사용하여 만든 getter/setter에서 값을 가져온다. getter/setter없으면 터진다. -->
+now : <span th:text="${now}"></span> <br/> 
+phone : <span th:text="${phone.name}"></span> <br/>
+<h2>basic</h2>
+<a href="basic/var">var</a>
+<a href="basic/scope?aaa=123">scope</a>
+<a href="basic/calc?a=10&b=20">calc</a><br/>
+<a href="basic/studentExam">문제-수우미양가-studentExam</a>
+<a href="basic/exam">선생님 풀이-exam</a><br/>
+<a href="basic/control">control</a>
+<!-- 230627 -->
+<a href="basic/link">link</a>
+<a href="basic/join">join</a>
+<a href="basic/formform">form</a>
+<a href="basic/layout">layout</a>
+
+<!-- 230628 -->
+<h2>mybatis</h2>
+<a href="db/list">list</a> <br />
+<!-- 230629 -->
+<a href="db/list2">list2</a> <br />
+<a href="tran/list">transaction</a>
+
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<body th:fragment="main-body">
+나는 body입니다.
+	<th:block layout:fragment="content"></th:block>
+<br/>
+<hr/>
+	<th:block layout:fragment="add-content"></th:block>
+바디에서 body 안닫음.
+</html>

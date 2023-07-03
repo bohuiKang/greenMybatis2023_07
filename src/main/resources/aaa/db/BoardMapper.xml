@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTO Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aaa.db.BoardMapper">
+	<select id="list" resultType="aaa.db.BoardDTO">
+		select * from board
+	</select>
+	
+	<select id="detail" parameterType="bDTO" resultType="bDTO">
+		select * from board where id = #{id}
+	</select>
+	
+	<insert id="inserttt" parameterType="bDTO" >
+		insert into board (title, pname, pw, content, upfile, reg_date, level, seq, cnt)
+		values
+		( #{title}, #{pname}, #{pw}, #{content}, #{upfile}, sysdate(), 0,0,0)
+	</insert>
+	
+	<delete id="deleteee" parameterType="bDTO">
+		delete from board where id = #{id} and pw = #{pw}
+	</delete>
+	
+	<update id="modifyyy" parameterType="bDTO">
+		update board set title = #{title}, pname = #{pname}, content = #{content}
+		where id = #{id} and pw = #{pw}
+	</update>
+
+</mapper>
